@@ -9,6 +9,8 @@ class AdvertisementFilter(filters.FilterSet):
     # TODO: задайте требуемые фильтры
 
     created_at = filters.DateTimeFilter(field_name="created_at", lookup_expr='gt')
+    status = filters.ChoiceFilter(field_name="status")
 
     class Meta:
         model = Advertisement
+        fields = ['created_at', 'status']
